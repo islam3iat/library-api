@@ -1,0 +1,26 @@
+services:
+  db:
+    container_name: mysql2
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "0556559704Islam"
+      MYSQL_DATABASE: "tes-api"
+      MYSQL_USER: "dark3"
+      MYSQL_PASSWORD: "0556559704Islam"
+    volumes:
+      - db:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+    networks:
+      - db
+    restart: unless-stopped
+
+
+
+
+networks:
+  db:
+    driver: bridge
+volumes:
+  db:
